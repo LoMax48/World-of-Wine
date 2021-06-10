@@ -22,7 +22,7 @@ class Fridge
     /**
      * @ORM\Column(type="integer")
      */
-    private $Capacity;
+    private $capacity;
 
     /**
      * @ORM\Column(type="integer")
@@ -52,12 +52,12 @@ class Fridge
 
     public function getCapacity(): ?int
     {
-        return $this->Capacity;
+        return $this->capacity;
     }
 
-    public function setCapacity(int $Capacity): self
+    public function setCapacity(int $capacity): self
     {
-        $this->Capacity = $Capacity;
+        $this->capacity = $capacity;
 
         return $this;
     }
@@ -130,6 +130,6 @@ class Fridge
 
     public function __toString()
     {
-        return (string) $this->id;
+        return (string) "№" . $this->id . ", " . $this->capacity . ", " . $this->temperature . "°C";
     }
 }

@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Name{% endblock %}
+
+{% block body %}
+    <div class="container mx-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ name.name }}</h5>
+                <p class="card-text">{{ name.description|striptags}}</p>
+                <p class="card-text">{{ name.color }}</p>
+                <p class="card-text">{{ name.sweetness}}</p>
+                <p class="card-text">Алкоголь{{ name.degrees }}</p>
+                <p class="card-text">Сахар: {{ name.sugar }}</p>
+                <div class="card-footer">Цена: {{name.price}} рублей</div>
+                <a href="#" class="btn btn-primary my-2">Добавить в заказ</a>
+            </div>
+        </div>
+    <div>
+    <a href="{{ path('name_index') }}">Вернуться к каталогу</a>
+{% endblock %}

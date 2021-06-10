@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Партии вина{% endblock %}
+
+{% block body %}
+    <a href="{{ path('batch_new') }}" class="btn btn-outline-primary my-2 mx-2">Добавить новую партию</a>
+    {% for batch in batches %}
+        <div class="card my-3 mx-2">
+            <div class="card-body">
+                <h5 class="card-title">Партия №{{ batch.id }}</h5>
+                <p class="card-text">Объём: {{ batch.size }} бутылок</p>
+                <p class="card-text">Дата розлива: {{ batch.date|date("d/m/Y") }}</p>
+                <p class="card-text">Холодильная камера: {{ batch.fridge }}</p>
+                <p class="card-text">Сорт: {{ batch.name }}</p>
+                <a href="{{ path('batch_edit', {'id': batch.id}) }}" class="btn btn-outline-primary my-2">Изменить ХК</a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Изменение условий хранения{% endblock %}
+
+{% block body %}
+    <h1>Изменить условия хранения партии</h1>
+
+    {{ include('batch/_form.html.twig', {'button_label': 'Обновить'}) }}
+
+    <a class="btn btn-primary" href="{{ path('batch_index') }}">Вернуться к списку</a>
+{% endblock %}
