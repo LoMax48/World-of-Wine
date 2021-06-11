@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Batch;
 use App\Form\BatchType;
+use App\Form\BatchEditType;
 use App\Repository\BatchRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -63,7 +64,7 @@ class BatchController extends AbstractController
      */
     public function edit(Request $request, Batch $batch): Response
     {
-        $form = $this->createForm(BatchType::class, $batch);
+        $form = $this->createForm(BatchEditType::class, $batch);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

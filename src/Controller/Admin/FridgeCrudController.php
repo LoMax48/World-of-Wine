@@ -21,7 +21,6 @@ class FridgeCrudController extends AbstractCrudController
             IdField::new('id')->hideOnForm(),
             IntegerField::new('capacity'),
             IntegerField::new('temperature'),
-            AssociationField::new('worker'),
         ];
     }
 }

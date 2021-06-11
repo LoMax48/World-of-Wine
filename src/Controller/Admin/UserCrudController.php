@@ -30,7 +30,6 @@ class UserCrudController extends AbstractCrudController
                 'Отдел продаж' => 'ROLE_SELLER',
                 'Холодильная камера' => 'ROLE_HK',
             ])->allowMultipleChoices(true)->setRequired(false),
-            AssociationField::new('fridges'),
         ];
     }
 }
