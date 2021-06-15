@@ -20,10 +20,10 @@ class BatchCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')->hideOnForm(),
-            IntegerField::new('size'),
-            AssociationField::new('name'),
-            AssociationField::new('fridge'),
-            DateField::new('date')
+            IntegerField::new('size','Размер'),
+            AssociationField::new('name','Вино'),
+            AssociationField::new('fridge','ХК'),
+            DateField::new('date','Дата разлива')
         ];
     }
 }

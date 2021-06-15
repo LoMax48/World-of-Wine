@@ -3,13 +3,20 @@
 {% block title %}World of Wine{% endblock %}
 
 {% block body %}
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/maks/wine/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/maks/wine/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <div class="container d-flex justify-content-center">
+        <h1>Винный магазин World of Wine</h1>
+    </div>
+    <div class="container d-flex justify-content-center">
+        <h2 class="text-muted">Самые лучшие вина в одном месте. Пожалуй.</h2>
+    </div>
+    <div class="container d-flex justify-content-center text-center">
+        <h3>
+            Поздравляем вас, вы попали на лучший сайт по продаже вин (по нашему скромному мнению)! Здесь вы можете заказать ваши любимые вина по лучшим ценам, не выходя из дома. Наши поставщики доставляют только лучший товар, а сотрудники - настоящие профессионалы своего дела. Познакомьтесь с нами: наш каталог не оставит вас равнодушными.
+        </h3>
+    </div>
+    <div class="container d-flex justify-content-center text-center">
+        <form action="{{ path('name_index') }}">
+            <button class="btn btn-outline-success me-2" type="submit">Каталог</button>
+        </form>
+    </div>
 {% endblock %}

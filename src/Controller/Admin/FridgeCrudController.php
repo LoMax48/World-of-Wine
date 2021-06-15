@@ -19,8 +19,8 @@ class FridgeCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')->hideOnForm(),
-            IntegerField::new('capacity'),
-            IntegerField::new('temperature'),
+            IntegerField::new('capacity','Вместимость'),
+            IntegerField::new('temperature','Температура'),
         ];
     }
 }

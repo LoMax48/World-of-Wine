@@ -20,9 +20,9 @@ class OrderCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')->hideOnForm(),
-            DateTimeField::new('datetime'),
-            AssociationField::new('client'),
-            BooleanField::new('isConfirmed'),
+            DateTimeField::new('datetime','Дата и время'),
+            AssociationField::new('client','Клиент'),
+            BooleanField::new('isConfirmed','Подтверждение'),
         ];
     }
 }

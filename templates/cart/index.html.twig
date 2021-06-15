@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Корзина{% endblock %}
+
+{% block body %}
+    {% for cartItem in cartItems %}
+        <div class="card my-3 mx-2">
+            <div class="card-body">
+                <p class="card-text">Наименование: {{ cartItem.wineName }}</p>
+                <p class="card-text">Количество: {{ cartItem.wineNumber }} бутылок</p>
+                <p class="card-text">Стоимость: {{ cartItem.price }} рублей</p>
+            </div>
+        </div>
+    {% endfor %}
+    Итого: {{ sumPrice }} рублей.
+    <a href="{{ path('makeOrder') }}" class="btn btn-outline-primary my-2">Оформить заказ</a>
+{% endblock %}

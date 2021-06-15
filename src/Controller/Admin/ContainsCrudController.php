@@ -19,9 +19,9 @@ class ContainsCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')->hideOnForm(),
-            AssociationField::new('name'),
-            AssociationField::new('booking'),
-            IntegerField::new('number'),
+            AssociationField::new('name','Вино'),
+            AssociationField::new('booking','Номер заказа'),
+            IntegerField::new('number','Количество'),
         ];
     }
 }

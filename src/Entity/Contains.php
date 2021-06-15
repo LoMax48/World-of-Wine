@@ -29,7 +29,7 @@ class Contains
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Order::class, inversedBy="contains")
+     * @ORM\ManyToOne(targetEntity=Order::class, inversedBy="contains", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $booking;
@@ -77,6 +77,6 @@ class Contains
 
     public function __toString()
     {
-        return (string) $this->id;
+        return $this->name . ": " . $this->number;
     }
 }

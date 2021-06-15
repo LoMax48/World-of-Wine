@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Подтверждение заказа{% endblock %}
+
+{% block body %}
+    {{ include('order/_form.html.twig', {'button_label': 'Обновить'}) }}
+    <a href="{{ path('order_index') }}" class="btn btn-outline-primary">Вернуться к списку</a>
+{% endblock %}

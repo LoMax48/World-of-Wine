@@ -38,8 +38,8 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Холодильные камеры', 'fas fa-list', Fridge::class);
         yield MenuItem::linkToCrud('Винные партии', 'fas fa-list', Batch::class);
-        yield MenuItem::linkToCrud('Заказы', 'fas fa-list', Order::class);
         yield MenuItem::linkToCrud('Вина', 'fas fa-list', Name::class);
+        yield MenuItem::linkToCrud('Заказы', 'fas fa-list', Order::class);
         yield MenuItem::linkToCrud('Данные для заказа', 'fas fa-list', Contains::class);
         yield MenuItem::linkToRoute('Вернуться на главную', 'fa fa-home', 'home');
     }

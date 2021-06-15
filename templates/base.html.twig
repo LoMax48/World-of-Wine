@@ -19,39 +19,47 @@
                     <img src="../img/wine.png" height="30px">
                     World of Wine
                 </a>
+                <div class="d-flex flex-row align-items-center">
+                
                 {% if is_granted('ROLE_ADMIN') %}
                     <form action="{{ path('admin') }}">
                         <button class="btn btn-outline-info me-2" type="submit">Админ-панель</button>
                     </form>
+                    Здравствуйте, {{ app.user.name }}
                     <form action="{{ path('app_logout') }}">
                         <button class="btn btn-outline-danger me-2" type="submit">Выход</button>
                     </form>
-                    Здравствуйте, {{ app.user.name }}
                 {% elseif is_granted('ROLE_HK') %}
                     <form action="{{ path('batch_index') }}">
                         <button class="btn btn-outline-info me-2" type="submit">Отдел хранения</button>
                     </form>
+                    Здравствуйте, {{ app.user.name }}
                     <form action="{{ path('app_logout') }}">
                         <button class="btn btn-outline-danger me-2" type="submit">Выход</button>
                     </form>
+                {% elseif is_granted('ROLE_SELLER') %}
+                    <form action="{{ path('order_index') }}">
+                        <button class="btn btn-outline-info me-2" type="submit">Заказы</button>
+                    </form>
                     Здравствуйте, {{ app.user.name }}
+                    <form action="{{ path('app_logout') }}">
+                        <button class="btn btn-outline-danger me-2" type="submit">Выход</button>
+                    </form>
                 {% elseif is_granted('ROLE_USER') %}
                     <form action="{{ path('name_index') }}">
                         <button class="btn btn-outline-info me-2" type="submit">Каталог</button>
                     </form>
+                    <form action="{{ path('cart') }}">
+                        <button class="btn btn-outline-success me-2" type="submit">Корзина</button>
+                    </form>
+                     Здравствуйте, {{ app.user.name }}
                     <form action="{{ path('app_logout') }}">
                         <button class="btn btn-outline-danger me-2" type="submit">Выход</button>
                     </form>
-                    Здравствуйте, {{ app.user.name }}
-                {% elseif is_granted('ROLE_SELLER') %}
-                    <form action="{{ path('home') }}">
-                        <button class="btn btn-outline-info me-2" type="submit">Заказы</button>
-                    </form>
-                    <form action="{{ path('app_logout') }}">
-                        <button class="btn btn-outline-danger me-2" type="submit">Выход</button>
-                    </form>
-                    Здравствуйте, {{ app.user.name }}
                 {% else %}
+                    <form action="{{ path('name_index') }}">
+                        <button class="btn btn-outline-info me-2" type="submit">Каталог</button>
+                    </form>
                     <form action="{{ path('app_login') }}">
                         <button class="btn btn-outline-success me-2" type="submit">Вход</button>
                     </form>
@@ -59,6 +67,7 @@
                         <button class="btn btn-outline-secondary me-2" type="submit">Регистрация</button>
                     </form>
                 {% endif %}
+                </div>
             </div>
         </nav>
         {% block body %}

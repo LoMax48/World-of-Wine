@@ -21,13 +21,13 @@ class NameCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')->hideOnForm(),
-            TextField::new('name'),
-            TextEditorField::new('description'),
-            TextField::new('color'),
-            TextField::new('sweetness'),
-            IntegerField::new('degrees'),
-            IntegerField::new('sugar'),
-            IntegerField::new('price'),
+            TextField::new('name','Наименование'),
+            TextEditorField::new('description','Описание'),
+            TextField::new('color','Цвет'),
+            TextField::new('sweetness','Сладость'),
+            IntegerField::new('degrees','Градусы'),
+            IntegerField::new('sugar','Сахар'),
+            IntegerField::new('price','Цена'),
         ];
     }
 }

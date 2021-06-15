@@ -31,7 +31,7 @@ class Order
     private $isConfirmed;
 
     /**
-     * @ORM\OneToMany(targetEntity=Contains::class, mappedBy="booking")
+     * @ORM\OneToMany(targetEntity=Contains::class, mappedBy="booking", cascade={"persist"})
      */
     private $contains;
 

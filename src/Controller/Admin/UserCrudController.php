@@ -21,10 +21,10 @@ class UserCrudController extends AbstractCrudController
         return [
             IdField::new('id')->hideOnForm(),
             TextField::new('email'),
-            TextField::new('surname'),
-            TextField::new('name'),
-            TextField::new('midname'),
-            TextField::new('phone'),
+            TextField::new('surname','Фамилия'),
+            TextField::new('name','Имя'),
+            TextField::new('midname','Отчество'),
+            TextField::new('phone','Номер телефона'),
             ChoiceField::new('roles','Роль',)->setChoices([
                 'Админ' => 'ROLE_ADMIN',
                 'Отдел продаж' => 'ROLE_SELLER',
