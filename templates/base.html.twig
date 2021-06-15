@@ -33,6 +33,9 @@
                     <form action="{{ path('batch_index') }}">
                         <button class="btn btn-outline-info me-2" type="submit">Отдел хранения</button>
                     </form>
+                    <form action="{{ path('orders_report') }}">
+                        <button class="btn btn-outline-success me-2" type="submit">Генерация отчёта</button>
+                    </form>
                     Здравствуйте, {{ app.user.name }}
                     <form action="{{ path('app_logout') }}">
                         <button class="btn btn-outline-danger me-2" type="submit">Выход</button>
@@ -40,6 +43,9 @@
                 {% elseif is_granted('ROLE_SELLER') %}
                     <form action="{{ path('order_index') }}">
                         <button class="btn btn-outline-info me-2" type="submit">Заказы</button>
+                    </form>
+                    <form action="{{ path('fridge_report') }}">
+                        <button class="btn btn-outline-success me-2" type="submit">Генерация отчёта</button>
                     </form>
                     Здравствуйте, {{ app.user.name }}
                     <form action="{{ path('app_logout') }}">

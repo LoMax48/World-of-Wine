@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Order;
+use App\Entity\Fridge;
 use Knp\Bundle\SnappyBundle\KnpSnappyBundle;
 use Knp\Bundle\SnappyBundle\Snappy\Response\PdfResponse;
 use Knp\Snappy\Pdf;
@@ -32,5 +33,22 @@ class ReportController extends AbstractController
         );
     }
 
+    /**
+     * @Route("/report/fridge_report", name="fridge_report", methods={"GET", "POST"})
+     */
+    public function fridgeReport(Request $request, Pdf $knpSnappyPdf): Response
+    {
+        $result = [];
+        $result = $this->getDoctrine()->getRepository(Fridge::class)->findAll();
+        
+        $html = $this->render('report/fridge_report.html.twig', [
+            'result' => $result,
+        ]);
 
+        $knpSnappyPdf->setOption('encoding', 'utf-8');
+        return new PdfResponse(
+            $knpSnappyPdf->getOutputFromHtml($html),
+            'Report.pdf',
+        );
+    }
 }
